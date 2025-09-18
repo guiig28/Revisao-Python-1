@@ -530,3 +530,131 @@ elif (len(Str1) < len(Str2)):
     print(Retorno .format("segunda string", "primeira string", len(Str2), "primeira string", len(Str1)))
 else:
     print("As strings possuem o mesmo número de caracteres.")
+
+#47 - 
+
+N = int(input("Digite um número de 1 a 9: "))
+Inv = "Resposta inválida."
+
+if (N < 1 or N > 9): 
+    print("Número inválido.")
+else:
+    Q1 = input("Seu número é par ou ímpar?").lower()
+
+    if (Q1 == "par"):
+        Q2 = input("Seu número é multiplo de 3? (s ou n)").lower()
+
+        if (Q2 == "s"):
+            print("Seu número escolhido foi o 6.")
+        elif (Q2 == "n"):
+            Q3 = input("Seu número é maior que 5? (s ou n)").lower()
+
+            if (Q3 == "s"):
+                print("Seu número escolhido foi o 8.")
+            elif (Q3 == "n"):
+                Q4 = input("Seu número é primo? (s ou n)").lower()
+
+                if (Q4 == "s"):
+                    print("Seu número escolhido foi o 2.")
+                elif (Q4 == "n"):
+                    print("Seu número escolhido foi o 4.")
+                else: 
+                    print(Inv)
+
+            else:
+                print(Inv)
+
+        else:
+            print(Inv)
+
+    elif (Q1 == "ímpar"):
+        Q2 = input("Seu número é multiplo de 3? (s ou n)").lower()
+
+        if (Q2 == "s"):
+            Q3 = input("Seu número é maior que 5? (s ou n)").lower()
+
+            if (Q3 == "s"): 
+                print("Seu número escolhido foi o 9.")
+            elif (Q3 == "n"):
+                print("Seu número escolhido foi o 3.")
+            else:
+                print(Inv)
+
+        elif (Q2 == "n"):
+            Q3 = input("Seu número é divisor do número 49?").lower()
+
+            if (Q3 == "s"):
+                Q4 = input("Seu número elevado ao quadrado dá ele mesmo?").lower()
+
+                if (Q4 == "s"):
+                    print("Seu número escolhido foi o 1.")
+                elif (Q4 == "n"):
+                    print("Seu número escolhido foi o 7.")
+                else:
+                    print(Inv)
+                
+            elif (Q3 == "n"):
+                print("Seu número escolhido foi o 5.")
+            else: 
+                print(Inv)
+
+        else:
+            print(Inv)
+
+    else:
+            print(Inv)
+
+#48 - 
+
+N1 = float(input("Digite o primeiro número: "))
+N2 = float(input("Digite o segundo número: "))
+N3 = float(input("Digite o terceiro número: "))
+
+Resp = "Maior: {:.2f}\nMenor: {:.2f}"
+
+if (N1 >= N2 and N2 >= N3):
+    print(Resp.format(N1, N3))
+elif (N1 >= N3 and N3 >= N2):
+    print(Resp.format(N1, N2))
+elif (N2 >= N1 and N1 >= N3):
+    print(Resp.format(N2, N3))
+elif (N2 >= N3 and N3 >= N1):
+    print(Resp.format(N2, N1))
+elif (N3 >= N1 and N1 >= N2):
+    print(Resp.format(N1, N2))
+elif (N3 >= N2 and N2 >= N1):
+    print(Resp.format(N3, N1))
+
+#49 - 
+
+Sb = float(input("Digite o valor do salário bruto: "))
+Desc = 0.0
+
+if (1500 <= Sb < 2500 ):
+    Desc = 0.1
+elif (2500 <= Sb < 3500 ):
+    Desc = 0.15
+elif (3500 <= Sb < 5000 ):
+    Desc = 0.2
+elif (5000 <= Sb < 7000 ):
+    Desc = 0.25
+elif (Sb >= 7000):
+    Desc = 0.3
+
+Sl = Sb - (Sb * Desc)
+
+print("Salário liquido: {:.2f}".format(Sl))
+
+#50 - 
+
+L1 = float(input("Digite o valor do primeiro lado: "))
+L2 = float(input("Digite o valor do segundo lado: "))
+L3 = float(input("Digite o valor do terceiro lado: "))
+
+if (L1 <= 0 or L2 <= 0 or L3 <= 0):
+    print("Favor digitar valores válidos.")
+else:
+    if ((L1 + L2 > L3) and (L1 + L3 > L2) and (L2 + L3 > L1)):
+        print("A figura é um triângulo.")
+    else: 
+        print("A figura não é um triângulo.")
