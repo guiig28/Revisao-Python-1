@@ -319,3 +319,214 @@ if (Peso < 0 or Alt < 0):
 else:
     IMC = Peso / (Alt ** 2)
     print("Seu IMC é de {:.2f}." .format(IMC))
+
+#33 - 
+
+NI = float(input("Digite o número inicial: "))
+NF = float(input("Digite o número final: "))
+NV = float(input("Digite o número a ser verificado: "))
+
+if (NI <= NV <= NF):
+    print("O número esta no intervalo: ")
+else:
+    print("O número não esta no intervalo: ")
+
+#34 - 
+
+N1 = float(input("Digite o primeiro valor: "))
+Op = ""
+
+while (Op != "+" and Op != "-" and Op != "*" and Op != "/"):
+    print("\nOperador inválido.\n")
+    Op = input("Digite o operador (+, -, *, /): ")
+
+N2 = float(input("Digite o segundo valor: "))
+
+if (Op == "+"):
+    print(N1 + N2)
+elif (Op == "-"):
+    print(N1 - N2)
+elif (Op == "*"):
+    print(N1 * N2)
+elif (Op == "/"):
+    print(N1 / N2)
+
+#35 - 
+
+L1 = float(input("Digite o primeiro lado do triângulo: "))
+L2 = float(input("Digite o segundo lado do triângulo: "))
+L3 = float(input("Digite o terceiro lado do triângulo: "))
+
+if (L1 <= 0 or L2 <= 0 or L3 <= 0): 
+    print("Favor digitar valores válidos.")
+else:
+    if (L1 == L2 == L3):
+        print("Triângulo equilátero.")
+    elif (L1 == L2 or L1 == L3 or L2 == L3):
+        print("Triângulo Isósceles.")
+    else: 
+        print("Triângulo Escaleno.")
+
+#36 - 
+
+Pw = input("Digite uma senha: ")
+ConfirmPw = input("Confirme sua senha: ")
+
+if Pw != ConfirmPw:
+    print("As senhas estão diferentes.")
+else:
+    print("Senha cadastrada com sucesso!")
+
+#37 - 
+
+V = float(input("Digite o valor da compra: "))
+Desc = 0
+
+if (V >= 200):
+    Desc = 0.4
+elif (V >= 100):
+    Desc = 0.3
+elif (V >= 50):
+    Desc = 0.2
+elif (V >= 30):
+    Desc = 0.1
+
+NovoV = V - (V * Desc)
+
+print("Valor atualizado: {:.2f}" .format(NovoV))
+
+#38 - 
+
+C = input("Digite um caractere: ").upper()
+
+if (C == "A" or C == "E" or C == "I" or C == "O" or C == "U"):
+    print("O caractere é uma vogal.")
+else: 
+    print("O caractere é uma consoante.")
+
+#39 - 
+
+N = input("Digte seu nickname: ")
+S = input("Digite sua senha")
+
+NCadastrado = "Nick123"
+SCadastrada = "Senha123"
+
+if (N == NCadastrado):
+    if (S == SCadastrada):
+        print("Login efetuado com sucesso.")
+    else: 
+        print("Senha inválida")
+else: 
+    print("Nickname inválido")
+
+#40 - 
+
+Temp = float(input("Digite a temperatura (em °C): "))
+
+if Temp >= 30:
+    print("Está muito calor!")
+elif Temp >= 22:
+    print("Está calor.")
+elif Temp >= 18:
+    print("Está ameno.")
+elif Temp >= 12:
+    print("Está frio.")
+elif Temp >= 6:
+    print("Está muito frio!")
+else:
+    print("Está congelando!")
+
+#41 - 
+
+N = int(input("Digite um número: "))
+M = int(input("Digite um número para verificar se ele é multiplo do primeiro número: "))
+
+if M % N == 0:
+    print("{} é multiplo de {}" .format(M, N))
+else:
+    print("{} não é multiplo de {}" .format(M, N))
+
+#42 - 
+
+X = float(input("Digite o valor de X: "))
+Y = float(input("Digite o valor de Y: "))
+
+if (X > 0 and Y > 0):
+    print("Primeiro quadrante.")
+elif (X < 0 and Y > 0):
+    print("Segundo quadrante.")
+elif (X < 0 and Y < 0):
+    print("Terceiro quadrante.")
+elif (X > 0 and Y < 0):
+    print("Quarto quadrante.")
+elif (X == 0 and Y != 0):
+    print("Sobre o eixo Y.")
+elif (X != 0 and Y == 0):
+    print("Sobre o eixo X.")
+else:
+    print("Sobre o eixo X e Y.")
+
+#43 - 
+
+N = int(input("Digite um número: "))
+
+if (N % 3 == 0 and N % 5 == 0):
+    print("O número é divisível por 3 e por 5.")
+elif (N % 3 == 0 and N % 5 != 0):
+    print("O número é divisível por 3.")
+elif (N % 3 != 0 and N % 5 == 0):
+    print("O número é divisível por 5.")
+else: 
+    print("O número não é divisível por 3 nem por 5.")
+
+#44 - 
+
+I = int(input("Digite sua idade: "))
+
+if I < 6:
+    print("O valor da passagem será isenta.")
+elif I < 18:
+    print("O valor da passagem será de R$ 25,00 (metade do preço)")
+else: 
+    print("O valor da passagem será de R$ 50,00 (preço cheio)")
+
+#45 - 
+
+Dia = int(input("Digite o dia: "))
+Mes = int(input("Digite o mês: "))
+Ano = int(input("Digite o ano: "))
+
+if (Mes < 1 or Mes >12):
+    print("Mês inválido.")
+else:
+    if((Dia < 1) 
+       or (Mes == 1 and Dia > 31) 
+       or (Ano % 4 != 0 and Mes == 2 and Dia > 28) or (Ano % 4 == 0 and Mes == 2 and Dia > 29) 
+       or (Mes == 3 and Dia > 31) 
+       or (Mes == 4 and Dia > 30)
+       or (Mes == 5 and Dia > 31)
+       or (Mes == 6 and Dia > 30)
+       or (Mes == 7 and Dia > 31)
+       or (Mes == 8 and Dia > 31)
+       or (Mes == 9 and Dia > 30)
+       or (Mes == 10 and Dia > 31)
+       or (Mes == 11 and Dia > 30)
+       or (Mes == 12 and Dia > 31)):
+        print("Dia inválido.")
+    else:
+        print("Data válida.")
+
+#46 - 
+
+Str1 = input("Digite a primeira string: ")
+Str2 = input("Digite a segunda string: ")
+
+Retorno = "A {} possui mais caracteres que a {}, pois possui um total de {} caracteres, enquanto a {} possui {} caracteres."
+
+if (len(Str1) > len(Str2)):
+    print(Retorno .format("primeira string", "segunda string", len(Str1), "segunda string", len(Str2)))
+elif (len(Str1) < len(Str2)):
+    print(Retorno .format("segunda string", "primeira string", len(Str2), "primeira string", len(Str1)))
+else:
+    print("As strings possuem o mesmo número de caracteres.")
